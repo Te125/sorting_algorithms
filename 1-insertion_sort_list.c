@@ -42,30 +42,18 @@ void insert_node(listint_t **list, listint_t *node)
  */
 void insertion_sort_list(listint_t **list)
 {
-	int sp = 0;
 	listint_t *fst, *n_fst;
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 	{
 		return;
 	}
-	while (1)
+	fst = (*list)->next;
+	while (fst)
 	{
-		fst = (*list)->next;
-		while (fst)
-		{
-			n_fst = fst->next;
-			if (fst->n < fst->prev->n)
-			{
-				insert_node(list, fst);
-				sp = 1;
-			}
-			fst = n_fst;
-		}
+		n_fst = fst->next;
+		insert_node(list, fst);
+		fst = n_fst;
 		print_list(*list);
-		if (!sp)
-		{
-			break;
-		}
 	}
 }
