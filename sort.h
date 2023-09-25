@@ -27,5 +27,7 @@ void insert_node(listint_t **list, listint_t *node);
 void selection_sort(int *array, size_t size);
 void swap(int *array, size_t id, size_t id1);
 void quick_sort(int *array, size_t size);
+int lomuto_partition(int *array, int fst, int snd, size_t size);
+void quicksort(int *array, int fst, int snd, size_t size);
 
 #endif
