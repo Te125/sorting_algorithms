@@ -22,8 +22,9 @@ void insert_node(listint_t **list, listint_t *node)
 	}
 	fst = *list;
 	while (fst->next != NULL && fst->next->n < node->n)
-        fst = fst->next;
-
+	{
+		fst = fst->next;
+	}
 	node->next = fst->next;
 	if (fst->next != NULL)
 	{
